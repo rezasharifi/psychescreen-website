@@ -130,7 +130,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(formData),
-                mode: 'cors'
+                mode: 'cors',
+                credentials: 'omit'
             });
             
             console.log('Response received:', response);
@@ -259,6 +260,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                     headers: {
                         'Content-Type': 'application/json'
                     },
+                    mode: 'cors', // Explicitly set CORS mode
+                    credentials: 'omit', // Don't send credentials
                     body: JSON.stringify({
                         phoneNumber: phoneNumber,
                         countryCode: '+1' // Assuming US phone numbers
@@ -301,6 +304,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                         headers: {
                             'Content-Type': 'application/json'
                         },
+                        mode: 'cors', // Explicitly set CORS mode
+                        credentials: 'omit', // Don't send credentials
                         body: JSON.stringify({
                             phoneNumber: phoneNumber,
                             code: verificationCode,
