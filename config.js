@@ -27,9 +27,11 @@ class ConfigLoader {
             
             const yamlText = await response.text();
             this.config = this.parseYAML(yamlText);
+            console.log('Configuration loaded successfully');
             return this.config;
         } catch (error) {
             console.error('Error loading configuration:', error);
+            console.log('Falling back to default configuration');
             // Fallback to default configuration
             this.config = this.getDefaultConfig();
             return this.config;
@@ -86,25 +88,39 @@ class ConfigLoader {
     }
 
     getDefaultConfig() {
+        // Try to get configuration from environment variables (set by AWS Amplify)
+        const getEnvVar = (name, defaultValue) => {
+            // Check if we're in a browser environment with environment variables
+            if (typeof window !== 'undefined' && window.ENV && window.ENV[name]) {
+                return window.ENV[name];
+            }
+            return defaultValue;
+        };
+
         return {
             api: {
-                base_url: "https://x.com/api",
-                timeout: 30000,
-                retry_attempts: 3
+                base_url: getEnvVar('API_BASE_URL', "https://your-api-gateway.amazonaws.com/Prod/register"),
+                timeout: parseInt(getEnvVar('API_TIMEOUT', '30000')),
+                retry_attempts: parseInt(getEnvVar('API_RETRY_ATTEMPTS', '3'))
+            },
+            twilio: {
+                account_sid: getEnvVar('TWILIO_ACCOUNT_SID', "YOUR_TWILIO_ACCOUNT_SID"),
+                verify_service_sid: getEnvVar('TWILIO_VERIFY_SERVICE_SID', "YOUR_TWILIO_VERIFY_SERVICE_SID"),
+                verification_api_url: getEnvVar('TWILIO_VERIFICATION_API_URL', "https://your-verification-api.amazonaws.com/Prod/send-verification")
             },
             dashboard: {
-                refresh_interval: 30000,
-                chart_animation_duration: 1000,
-                default_time_range: "3m"
+                refresh_interval: parseInt(getEnvVar('DASHBOARD_REFRESH_INTERVAL', '30000')),
+                chart_animation_duration: parseInt(getEnvVar('DASHBOARD_CHART_ANIMATION_DURATION', '1000')),
+                default_time_range: getEnvVar('DASHBOARD_DEFAULT_TIME_RANGE', "3m")
             },
             patient: {
-                default_patient_id: "sarah_chen",
-                data_update_frequency: 60000
+                default_patient_id: getEnvVar('PATIENT_DEFAULT_ID', "sarah_chen"),
+                data_update_frequency: parseInt(getEnvVar('PATIENT_DATA_UPDATE_FREQUENCY', '60000'))
             },
             ui: {
-                theme: "light",
-                language: "en",
-                timezone: "UTC"
+                theme: getEnvVar('UI_THEME', "light"),
+                language: getEnvVar('UI_LANGUAGE', "en"),
+                timezone: getEnvVar('UI_TIMEZONE', "UTC")
             }
         };
     }
