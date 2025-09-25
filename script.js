@@ -7,9 +7,31 @@ window.addEventListener('error', function(e) {
         lineno: e.lineno,
         colno: e.colno
     });
+    
+    // Specific handling for undefined variable errors
+    if (e.message.includes('is not defined')) {
+        console.error('🔍 Undefined Variable Error Detected');
+        console.error('This usually indicates a minified library issue or missing dependency');
+        console.error('Check if all CDN libraries are loading correctly');
+    }
 });
 
 document.addEventListener('DOMContentLoaded', async function() {
+    // Check if required libraries are loaded
+    console.log('🔍 Checking library dependencies...');
+    
+    if (typeof Chart === 'undefined') {
+        console.warn('⚠️ Chart.js not loaded');
+    } else {
+        console.log('✅ Chart.js loaded');
+    }
+    
+    if (typeof React === 'undefined') {
+        console.warn('⚠️ React not loaded');
+    } else {
+        console.log('✅ React loaded');
+    }
+    
     try {
         // Load configuration first
         await window.AppConfig.loadConfig();
