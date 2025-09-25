@@ -1,28 +1,28 @@
 # Application Configuration
 api:
-  base_url: https://your-api-gateway.amazonaws.com/Prod/register
+  base_url: "https://your-api-gateway.amazonaws.com/Prod/register"
   timeout: 30000
   retry_attempts: 3
 
 # Twilio Configuration
 twilio:
-  account_sid: YOUR_TWILIO_ACCOUNT_SID
-  verify_service_sid: YOUR_TWILIO_VERIFY_SERVICE_SID
-  verification_api_url: https://uiw1g8s709.execute-api.us-east-1.amazonaws.com/Prod
+  account_sid: "YOUR_TWILIO_ACCOUNT_SID"
+  verify_service_sid: "YOUR_TWILIO_VERIFY_SERVICE_SID"
+  verification_api_url: "https://your-verification-api.amazonaws.com/Prod/send-verification"
 
 # Dashboard Configuration
 dashboard:
-  refresh_interval: 30000 # 30 seconds
+  refresh_interval: 30000  # 30 seconds
   chart_animation_duration: 1000
-  default_time_range: 3m
+  default_time_range: "3m"
 
 # Patient Data Configuration
 patient:
-  default_patient_id: sarah_chen
-  data_update_frequency: 60000 # 1 minute
+  default_patient_id: "sarah_chen"
+  data_update_frequency: 60000  # 1 minute
 
 # UI Configuration
 ui:
-  theme: light
-  language: en
-  timezone: UTC
+  theme: "light"
+  language: "en"
+  timezone: "UTC"
