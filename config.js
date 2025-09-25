@@ -9,6 +9,11 @@ class ConfigLoader {
         } else {
             this.configPath = 'config.yaml';
         }
+        
+        // For production deployment, always use relative path
+        if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+            this.configPath = 'config.yaml';
+        }
     }
 
     async loadConfig() {
