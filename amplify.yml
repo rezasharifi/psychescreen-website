@@ -1,0 +1,19 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "Installing dependencies..."
+        - echo "No dependencies to install for static site"
+    build:
+      commands:
+        - echo "Building static site..."
+        - echo "Static site - no build process needed"
+  artifacts:
+    baseDirectory: .
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+      - .cache/**/*

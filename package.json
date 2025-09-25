@@ -1,0 +1,29 @@
+{
+  "name": "psychescreen-website",
+  "version": "1.0.0",
+  "description": "PsycheScreen - Mental Health Monitoring Solutions Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'No build process needed for static site'",
+    "test": "echo 'No tests configured'"
+  },
+  "keywords": [
+    "mental-health",
+    "monitoring",
+    "website",
+    "static-site"
+  ],
+  "author": "PsycheScreen Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/psychescreen-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/psychescreen-website/issues"
+  },
+  "homepage": "https://github.com/your-org/psychescreen-website#readme"
+}
+

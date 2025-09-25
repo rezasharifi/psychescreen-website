@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PsycheScreen - Mental Health Monitoring Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="config.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-brain"></i>
+                <span>PsycheScreen</span>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Revolutionizing Mental Health Monitoring</h1>
+                <p>Empowering therapists with real-time patient insights for better mental healthcare outcomes</p>
+                <button class="cta-button" onclick="location.href='#demo'">Get Started</button>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card" id="realtime-monitoring-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Real-time Monitoring</h3>
+                    <p>Track patient progress and symptoms with our advanced monitoring system</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-file-medical-alt"></i>
+                    <h3>Detailed Reports</h3>
+                    <p>Generate comprehensive reports for better treatment planning</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-bell"></i>
+                    <h3>Alert System</h3>
+                    <p>Instant notifications for critical changes in patient condition</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Patient Management</h3>
+                    <p>Efficient tools for managing multiple patients</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2>Key Features</h2>
+            <div class="feature-container">
+                <div class="feature-image">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500" alt="Dashboard Preview">
+                </div>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Intuitive Dashboard Interface</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p>HIPAA Compliant Security</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Custom Alert Settings</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Data Analytics & Insights</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="demo" class="demo">
+            <h2>Product Demo</h2>
+            <div class="demo-content">
+                <div class="demo-text">
+                    <h3>Experience PsycheScreen in Action</h3>
+                    <p>See how our platform can transform your practice with real-time patient monitoring and comprehensive analytics.</p>
+                    <button class="demo-button" id="openDemoModal">Request Demo</button>
+                </div>
+                <div class="demo-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500" alt="Product Dashboard">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>About PsycheScreen</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>PsycheScreen is dedicated to improving mental healthcare through innovative technology. Our platform bridges the gap between therapy sessions, providing valuable insights for better treatment outcomes.</p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=500" alt="Mental Health Care">
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <form id="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <select required>
+                        <option value="">Select Your Role</option>
+                        <option value="therapist">Therapist</option>
+                        <option value="healthcare">Healthcare Provider</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>reza@psychescreen.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+1 (530) 306-1554</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-location-dot"></i>
+                        <p>6409 Towering Elm Terr, Clarksville, MD 21029</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>PsycheScreen</h3>
+                <p>Advancing mental healthcare through technology</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 PsycheScreen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="demoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Request a Demo</h2>
+            <form id="demoForm">
+                <div class="form-group">
+                    <input type="text" id="firstName" placeholder="First Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="lastName" placeholder="Last Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group" style="display: flex; gap: 0.5rem; align-items: center;">
+                    <input type="tel" id="phone" placeholder="Phone Number" required style="flex: 1;">
+                    <button type="button" id="verifyPhoneBtn" style="padding: 0.7rem 1.2rem; font-size: 1rem; background: linear-gradient(90deg, #2c6eb5 60%, #64b5f6 100%); color: #fff; border: none; border-radius: 8px; cursor: pointer;">Verify</button>
+                </div>
+                <div class="form-group" id="codeGroup" style="display: none;">
+                    <input type="text" id="verificationCode" placeholder="Enter 6-digit code" maxlength="6" pattern="\d{6}">
+                </div>
+                <div class="form-group">
+                    <select id="evaluationType" required>
+                        <option value="">Select Evaluation Type</option>
+                        <option value="first">First Evaluation</option>
+                        <option value="regular">Regular Monitoring</option>
+                    </select>
+                </div>
+                <button type="submit">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="dashboardModal" class="modal">
+        <div class="modal-content" style="max-width: 90vw; width: 1000px; min-height: 80vh;">
+            <span class="close-dashboard-modal">&times;</span>
+            <h2>Real-time Monitoring Dashboard</h2>
+            <iframe id="dashboardFrame" src="dashboard/dash_sample.html" style="width:100%; height:70vh; border:none; border-radius: 10px;"></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
