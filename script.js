@@ -1,6 +1,22 @@
+// Global error handler for JavaScript errors
+window.addEventListener('error', function(e) {
+    console.error('JavaScript Error:', e.error);
+    console.error('Error details:', {
+        message: e.message,
+        filename: e.filename,
+        lineno: e.lineno,
+        colno: e.colno
+    });
+});
+
 document.addEventListener('DOMContentLoaded', async function() {
-    // Load configuration first
-    await window.AppConfig.loadConfig();
+    try {
+        // Load configuration first
+        await window.AppConfig.loadConfig();
+    } catch (error) {
+        console.error('Failed to load configuration:', error);
+        // Continue with default configuration
+    }
     // Smooth scrolling for navigation links
     document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -120,6 +136,15 @@ document.addEventListener('DOMContentLoaded', async function() {
             // Send data to the API endpoint from configuration
             const apiUrl = window.AppConfig.get('api.base_url');
             console.log('API URL from config:', apiUrl);
+            
+            // Check if URL is still a placeholder
+            if (apiUrl && apiUrl.includes('your-api-gateway')) {
+                throw new Error('API URL is still using placeholder value. Please set API_BASE_URL environment variable.');
+            }
+            
+            if (!apiUrl) {
+                throw new Error('API URL not configured. Please set API_BASE_URL environment variable.');
+            }
             
             console.log('Sending request to:', apiUrl);
             console.log('Request payload:', JSON.stringify(formData, null, 2));
@@ -255,6 +280,17 @@ document.addEventListener('DOMContentLoaded', async function() {
             try {
                 // Send verification code via Twilio API
                 const verificationApiUrl = window.AppConfig.get('twilio.verification_api_url');
+                console.log('Verification API URL:', verificationApiUrl);
+                
+                // Check if URL is still a placeholder
+                if (verificationApiUrl && verificationApiUrl.includes('your-verification-api')) {
+                    throw new Error('API URL is still using placeholder value. Please set TWILIO_VERIFICATION_API_URL environment variable.');
+                }
+                
+                if (!verificationApiUrl) {
+                    throw new Error('Verification API URL not configured. Please set TWILIO_VERIFICATION_API_URL environment variable.');
+                }
+                
                 const response = await fetch(verificationApiUrl, {
                     method: 'POST',
                     headers: {
